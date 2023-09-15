@@ -2,7 +2,7 @@ import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
   const cartItems = new Array(getLocalStorage("so-cart"));
-  //A check if cartItems array isn't empty and if it is return to exit he function
+  //A check if cartItems array is empty and if it is return to exit the function
   if (cartItems.length == 0){
     return 
   }
