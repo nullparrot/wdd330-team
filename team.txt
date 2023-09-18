@@ -6,3 +6,4 @@ Members
 - Andrew
 - Casey
 - David
+- Sam
