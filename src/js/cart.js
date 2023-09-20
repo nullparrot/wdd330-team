@@ -2,10 +2,6 @@ import { getLocalStorage } from "./utils.mjs";
 
 function renderCartContents() {
   const cartItems = new Array(getLocalStorage("so-cart"));
-  //A check if cartItems array is empty and if it is return to exit the function
-  if (cartItems.length == 0){
-    return 
-  }
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
