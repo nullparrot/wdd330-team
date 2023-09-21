@@ -1,3 +1,5 @@
+import { GetParam } from "./ProductData.mjs";
+
 export default class ProductDetails {
     constructor(productId, dataSource){
         this.productId = productId;
@@ -21,6 +23,31 @@ export default class ProductDetails {
         addProductToCart(product);
       }
       renderProductDetails(){
+if ("content" in document.createElement("template")) {
+  const productDetail = document.querySelector("product-detail");
+  const ProductTemplate = document.querySelector("#productTemplate");
+  const productDisplay = productTemplate.content.cloneNode(true);
+  //Work needed to get product imported into script.
+  productDisplay.querySelector("product__brand").content = "Product Brand Here"
+  productDisplay.querySelector("product__name").content = "Product Name Here"
+  productImage = productDisplay.querySelector("product__image")
+  productImage.src = "Image Source Here"
+  productImage.alt = "Product Name Here"
+  productDisplay.querySelector("product-card__price").content = "Product Price Here"
+  productDisplay.querySelector("product__color").content = "Product Color Here"
+  productDisplay.querySelector("product__description").content = "Product Description Here"
+  productDisplay.querySelector("#addToCart").setAttribute("data-id","Product ID Here")
+
+  productDetail.appendChild(product);
+} else {
+  //Work needed below if we want to design some sort of error handling
+  const productDetail = document.querySelector("product-detail");
+  errorMessage = document.createElement('h2')
+  errorMessage.content="Our bad, we don't this piece working yet. It's planned."
+  productDetail.appendChild(errorMessage)
+}
+
+
 
       }
   }
