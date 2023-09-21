@@ -7,3 +7,4 @@ Members
 - Casey
 - David
 - Sam
+- Jhon
