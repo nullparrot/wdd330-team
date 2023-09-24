@@ -1,10 +1,10 @@
 function productCardTemplate(product) {
   return `<li class="product-card">
     <a href="product_pages/index.html?product=">
-      <img src="" alt="Image of ">
-      <h3 class="card__brand"></h3>
-      <h2 class="card__name"></h2>
-      <p class="product-card__price">$</p>
+      <img src="${product.Image}" alt="Image of ${product.NameWithoutBrand}">
+      <h3 class="card__brand">${product.Brand.Name}</h3>
+      <h2 class="card__name">${product.NameWithoutBrand}</h2>
+      <p class="product-card__price">$${product.ListPrice}</p>
     </a>
   </li>`
 }
