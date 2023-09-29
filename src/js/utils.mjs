@@ -25,6 +25,25 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get('product')
+  const product = urlParams.get("product")
   return product
+}
+
+function renderWithTemplate(data, listElement) {
+  listElement.insertAdjacentHTML("afterbegin", data);
+}
+
+async function loadTemplate(template){
+  let x = await fetch(template);
+  let y = await x.text();
+  return y
+}
+
+export default async function loadHeaderFooter(){
+  const header_template = await loadTemplate("../partials/header.html")
+  const footer_template = await loadTemplate("../partials/footer.html")
+  const header_element = document.querySelector("#main-header")
+  const footer_element = document.querySelector("#main-footer")
+  renderWithTemplate(header_template, header_element)
+  renderWithTemplate(footer_template, footer_element)
 }
