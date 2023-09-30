@@ -23,7 +23,6 @@ export function setClick(selector, callback) {
 }
 //Get parameters from url
 export function getParam(param) {
-  console.log("Lets get a",param)
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const value = urlParams.get(param)
@@ -40,7 +39,7 @@ async function loadTemplate(template){
   return y
 }
 
-export default async function loadHeaderFooter(){
+export async function loadHeaderFooter(){
   const header_template = await loadTemplate("../partials/header.html")
   const footer_template = await loadTemplate("../partials/footer.html")
   const header_element = document.querySelector("#main-header")
