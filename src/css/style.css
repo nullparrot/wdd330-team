@@ -119,20 +119,45 @@ button {
   max-width: 600px;
   margin: auto;
 }
-.products {
+.products, .categories {
   padding: 0.5em;
 }
-.product-list {
+.product-list{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
 }
-.product-list a {
+.product-list a ,.category-grid a{
   text-decoration: none;
   color: var(--dark-grey);
 }
+
+/* Styles for category lists */
+.category-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.category-card {
+  flex: 1 1 45%;
+  margin: 0.25em;
+  padding: 0.5em;
+  max-width: 250px;
+}
+.category-card h2{
+  margin: 0.5em 0;
+}
+
+.card__name {
+  font-size: 1em;
+}
+/* End category list card */
+
 /* Styles for product lists */
 .product-card {
   flex: 1 1 45%;
