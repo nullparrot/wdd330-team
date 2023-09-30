@@ -23,10 +23,11 @@ export function setClick(selector, callback) {
 }
 //Get parameters from url
 export function getParam(param) {
+  console.log("Lets get a",param)
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get("product")
-  return product
+  const value = urlParams.get(param)
+  return value
 }
 
 function renderWithTemplate(data, listElement) {
