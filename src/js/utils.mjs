@@ -25,8 +25,8 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get("product")
-  return product
+  const value = urlParams.get(param)
+  return value
 }
 
 function renderWithTemplate(data, listElement) {
@@ -39,7 +39,7 @@ async function loadTemplate(template){
   return y
 }
 
-export default async function loadHeaderFooter(){
+export async function loadHeaderFooter(){
   const header_template = await loadTemplate("../partials/header.html")
   const footer_template = await loadTemplate("../partials/footer.html")
   const header_element = document.querySelector("#main-header")
