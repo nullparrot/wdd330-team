@@ -25,7 +25,7 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get("product")
+  const product = urlParams.get(param)
   return product
 }
 
@@ -39,11 +39,26 @@ async function loadTemplate(template){
   return y
 }
 
-export default async function loadHeaderFooter(){
+export async function loadHeaderFooter(){
   const header_template = await loadTemplate("../partials/header.html")
   const footer_template = await loadTemplate("../partials/footer.html")
   const header_element = document.querySelector("#main-header")
   const footer_element = document.querySelector("#main-footer")
   renderWithTemplate(header_template, header_element)
   renderWithTemplate(footer_template, footer_element)
+}
+
+export function renderListWithTemplate(
+  templateFn,
+  parentElement,
+  list,
+  position = "afterbegin",
+  clear = false
+) {
+  const htmlStrings = list.map(templateFn);
+  // if clear is true we need to clear out the contents of the parent.
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
