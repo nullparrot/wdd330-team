@@ -14,11 +14,10 @@
 
   <body>
     <header class="divider" id="main-header"></header>
-
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
-        <form>
+        <form id="form-checkout">
           <section>
             <h3>Customer Name</h3>
             <label for="fname">First Name</label>
@@ -46,12 +45,7 @@
             <label for="code">Security Code</label>
             <input type="text" name="code" required>
           </section>
-          <section>
-            <input type="text" name="orderTotal">
-            <input type="text" name="shipping">
-            <input type="text" name="tax">
-          </section>
-          <button type="submit">Confirm Checkout</button>
+          <button id="checkout-button">Confirm Checkout</button>
         </form>
         <section class="checkout-summary">
           <p id="subtotal">Subtotal: </p>
