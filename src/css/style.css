@@ -251,3 +251,15 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.product-icons{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-icons > a{
+  width: 15%;
+}
