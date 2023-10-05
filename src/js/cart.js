@@ -1,6 +1,8 @@
 import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 import ShoppingCart from "./ShoppingCart.mjs"
 
+loadHeaderFooter();
+
 // function renderCartContents() {
 //   const cartItems = getLocalStorage("so-cart");
 //   //A check if cartItems array is empty and if it is return to exit the function
@@ -32,8 +34,5 @@ import ShoppingCart from "./ShoppingCart.mjs"
 
 // renderCartContents();
 
-let key = getLocalStorage("so-cart");
-let listelement = document.querySelector(".product-list")
-let shoppingcart = new ShoppingCart(key, listelement);
-shoppingcart.renderList();
-loadHeaderFooter()
+const cart = new ShoppingCart("so-cart", ".product-list");
+cart.renderCartContents();
