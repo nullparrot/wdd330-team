@@ -1,5 +1,5 @@
-const baseURL = "http://server-nodejs.cit.byui.edu:3000/"
-const checkoutURL = "http://server-nodejs.cit.byui.edu:3000/checkout"
+const baseURL = "https://wdd330-backend.onrender.com/"
+const checkoutURL = "https://wdd330-backend.onrender.com/checkout"
 
 function convertToJson(res) {
   if (res.ok) {
