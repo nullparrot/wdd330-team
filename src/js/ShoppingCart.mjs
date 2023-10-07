@@ -45,7 +45,7 @@ export default class ShoppingCart {
   renderTotal(cartItems){
     if(cartItems){
       let total = 0
-      cartItems.map((item) => {total += item.FinalPrice})
+      cartItems.map((item) => {total += item.FinalPrice*item.Qty})
       // for(let i = 0; i < cartItems.length; i += 1){
       //   total += cartItems[i].FinalPrice
       // }
