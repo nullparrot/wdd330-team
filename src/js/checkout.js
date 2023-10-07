@@ -1,4 +1,4 @@
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter,alertMessage } from "./utils.mjs";
 import {
   calculate_subtotal,
   calculate_the_rest,
@@ -17,11 +17,16 @@ packageItems();
 async function run_checkout() {
   let payload = await makePayload(document.forms["form-checkout"]);
   console.log(payload);
-  await checkout(payload);
-  emptyCart();
+  try {
+    await checkout(payload);
+    emptyCart()
+    window.location.href = "./success.html";
+  } catch (servicesError) {
+    console.log(await servicesError.message)
+  }
 }
 
-document.querySelector("#checkout-button").addEventListener("submit", (e) => {
+document.querySelector("#form-checkout").addEventListener("submit", (e) => {
   e.preventDefault();
-  run_Checkout.checkout();
+  run_checkout();
 });
