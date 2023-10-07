@@ -263,3 +263,12 @@ footer {
 .product-icons > a{
   width: 15%;
 }
+
+.cart-card__x{
+  color: white;
+  width: 20px;
+  text-align: center;
+  background-color: #303030;
+  grid-row: 1;
+  grid-column: 6;
+}
