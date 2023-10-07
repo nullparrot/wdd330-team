@@ -16,4 +16,4 @@ async function run_checkout(){
     await checkout(payload)
 }
 
-document.querySelector("#checkout-button").addEventListener("click", run_checkout)
+document.querySelector("#checkout-button").addEventListener("submit", run_checkout)
