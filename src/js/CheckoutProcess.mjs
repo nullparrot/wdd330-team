@@ -1,4 +1,4 @@
-import {getLocalStorage} from "./utils.mjs"
+import {getLocalStorage,setLocalStorage} from "./utils.mjs"
 const tax_rate = 0.06
 const shipping_first = 8.00
 const shipping_after_first = 2.00
@@ -55,6 +55,11 @@ export async function makePayload(form) {
       form_data.address = form_data.street + ", " + form_data.city + ", " + form_data.state + ", " + form_data.zip
       form_data.orderDate = new Date()
       return form_data
+}
+
+export function emptyCart(){
+    cart = []
+    setLocalStorage("so-cart", cart);
 }
 
 // takes a form element and returns an object where the key is the "name" of the form input.
