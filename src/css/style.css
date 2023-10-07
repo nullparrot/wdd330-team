@@ -271,4 +271,5 @@ footer {
   background-color: #303030;
   grid-row: 1;
   grid-column: 6;
+  cursor: pointer;
 }

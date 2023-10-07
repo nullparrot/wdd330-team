@@ -1,5 +1,3 @@
-
-
 import {setLocalStorage, getLocalStorage} from "./utils.mjs"
 
 function productDetailsTemplate(product) {
@@ -38,7 +36,13 @@ export default class ProductDetails {
       if(!cart){
         cart = []
       }
-      cart.push(this.product)
+      if(cart.some(product => product.Id === this.product.Id)){
+        const isMatching = (product) => product.Id === this.product.Id;
+        cart[cart.findIndex(isMatching)].Qty++
+      }else{
+        this.product.Qty = 1
+        cart.push(this.product)
+      }
       setLocalStorage("so-cart", cart);
     }
       // add to cart button event handler

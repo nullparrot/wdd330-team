@@ -12,7 +12,7 @@ function cartItemTemplate(item) {
       <h2 class="card__name">${item.Name}</h2>
     </a>
     <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-    <p class="cart-card__quantity">qty: 1</p>
+    <p class="cart-card__quantity">Qty: ${item.Qty}</p>
     <p class="cart-card__price">$${item.FinalPrice}</p>
     <span class="cart-card__x" data-id="${item.Id}">X</span>
   </li>`;
@@ -45,7 +45,7 @@ export default class ShoppingCart {
   renderTotal(cartItems){
     if(cartItems){
       let total = 0
-      cartItems.map((item) => {total += item.FinalPrice})
+      cartItems.map((item) => {total += item.FinalPrice*item.Qty})
       // for(let i = 0; i < cartItems.length; i += 1){
       //   total += cartItems[i].FinalPrice
       // }

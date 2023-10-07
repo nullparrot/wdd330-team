@@ -10,7 +10,7 @@ let cart_items = getLocalStorage("so-cart")
 
 export function calculate_subtotal(){
     //Calculate Subtotal
-    cart_items.map((item) => {subtotal += item.FinalPrice})
+    cart_items.map((item) => {subtotal += item.FinalPrice*item.Qty})
     document.querySelector("#subtotal").innerHTML = `Subtotal: ${subtotal.toFixed(2)}`
 }
 
@@ -21,7 +21,7 @@ export function calculate_the_rest(){
     //Calculate Shipping
     shipping = shipping_first
     cart_items.forEach(item => {
-        shipping += shipping_after_first
+        shipping += shipping_after_first*item.Qty
     });
     document.querySelector("#shipping").innerHTML = `Shipping: ${shipping.toFixed(2)}`
     //Calculate Total
@@ -38,7 +38,7 @@ export function packageItems() {
             id: item.Id,
             name: item.Name,
             price: item.FinalPrice,
-            quantity: 1
+            quantity: item.Qty
         }
         items.push(packeged_item)
     })
