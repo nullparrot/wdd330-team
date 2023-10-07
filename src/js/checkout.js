@@ -10,10 +10,12 @@ packageItems()
 
 
 async function run_checkout(){
-    event.preventDefault()
     let payload = await makePayload(document.forms["form-checkout"])
     console.log(payload)
     await checkout(payload)
 }
 
-document.querySelector("#checkout-button").addEventListener("submit", run_checkout)
+document.querySelector("#checkout-button").addEventListener("submit", (e) => {
+    e.preventDefault();
+    run_Checkout.checkout();
+  })
