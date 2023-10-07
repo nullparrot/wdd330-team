@@ -38,7 +38,7 @@ export function packageItems() {
             id: item.Id,
             name: item.Name,
             price: item.FinalPrice,
-            quantity: 1
+            quantity: item.Qty
         }
         items.push(packeged_item)
     })
